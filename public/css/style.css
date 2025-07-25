@@ -1,0 +1,93 @@
+:root {
+    --velvet-purple: #7f3e5f;
+    --light-color: #f6f2ef;
+    --light-pink: #D9A5B3;
+    --dark-gray: #2E2E2E;
+    --accent: #EADDC1;
+    --dark-purple: #6e284b;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    color: var(--dark-gray);
+}
+
+.title {
+    font-family: "Playfair Display", serif;
+}
+
+.navbar-brand {
+    font-size: 2rem;
+    color: var(--velvet-purple);
+    font-family: "Playfair Display", serif;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.navbar-bg-color {
+    background-color: white;
+    box-shadow: 0px 8px 11px 1px rgba(14, 10, 7, 0.1);
+    -webkit-box-shadow: 0px 8px 11px 1px rgba(14, 10, 7, 0.1);
+    -moz-box-shadow: 0px 8px 11px 1px rgba(14, 10, 7, 0.1);
+}
+
+.navbar-brand:hover {
+    color: var(--velvet-purple);
+}
+
+nav .nav-link:hover {
+    color: var(--velvet-purple);
+    transform: scale(1.1), 0.5s;
+    font-weight: 700;
+}
+
+.light-bg {
+    background-color: var(--light-color);
+}
+
+.btn1 {
+    background-color: var(--velvet-purple);
+    color: var(--light-color);
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    font-weight: 500;
+    width: fit-content;
+    box-shadow: 5px 5px 16px 20px rgba(66, 110, 107, 0.1);
+    -webkit-box-shadow: 5px 5px 20px -1px rgba(66, 110, 107, 0.1);
+    -moz-box-shadow: 5px 5px 20px -1px rgba(66, 110, 107, 0.1);
+}
+
+.btn1:hover {
+    background-color: var(--dark-purple);
+    color: var(--light-color);
+    outline: none;
+    border: none;
+    transform: scale(1.1), 0.5s;
+}
+
+.footer-bg {
+    background-color: var(--light-pink);
+}
+.border-bottom {
+    color: var(--dark-gray);
+}
+
+footer .nav-link:hover {
+    color: var(--velvet-purple);
+    transform: scale(1.1), 0.5s;
+    font-weight: 700;
+}
+
+.img-small {
+    object-fit: cover; 
+    object-position: center; 
+    height: 38%;
+}
+
