@@ -91,3 +91,11 @@ footer .nav-link:hover {
     height: 38%;
 }
 
+.title-hero{
+    font-family: "Playfair Display", serif;
+    font-size: 4rem;
+}
+
+.text-light {
+    color: var(--light-color);
+}
