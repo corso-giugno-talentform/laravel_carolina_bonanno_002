@@ -11,8 +11,8 @@
         </div>
     </article>
     <x-form>
-        <h2 class="text-center title">Hai commenti su questo articolo?</h2>
+        <h3 class="text-center title">Hai commenti su «{{ $article['title'] }}»?</h3>
         <p class="text-center">Scrivici utilizzando il form sottostante.</p>
-        <x-slot name='textarea'>Dicci tutto</x-slot>
+        <x-slot name='textarea'>Scrivi qui:</x-slot>
     </x-form>
 </x-main>
