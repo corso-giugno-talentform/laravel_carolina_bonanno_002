@@ -1,7 +1,8 @@
 <div id="carouselExampleAutoplaying" class="position-relative carousel slide w-100" data-bs-ride="carousel">
     <div class="position-absolute z-3 top-50 start-50 translate-middle">
         <div class="d-flex flex-column align-items-center justify-content-center">
-            <h1 class="title-hero text-white">Velvet Frame</h1>
+            <h1 class="title-hero text-white fst-italic">Velvet Frame</h1>
+            <h2 class="text-white fw-light">Le tue news sulla moda</h2>
         </div>
     </div>
     <div class="carousel-inner">
