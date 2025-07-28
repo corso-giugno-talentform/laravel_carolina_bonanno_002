@@ -6,7 +6,7 @@
         @csrf <!-- richiesta associata a ogni nostro elemento -->
         <div class="row mb-3">
             <div class="col">
-                {{ $idArticle }}
+                {{ $idArticle ?? null }}
                 <label for="name"class="form-label">Nome</label>
                 <input type="text" id="name" class="form-control" placeholder="Nome" aria-label="First name"
                     name="firstname">
