@@ -64,13 +64,18 @@ class PageController extends Controller
 
     public function send(Request $request)
     {
-        $data = [
-            'id_product' => $request->id_product,
-            'firstname' => $request->firstname,
-            'lastname' => $request->lastname,
-            'email' => $request->email,
-            'message' => $request->message,
-        ];
+        foreach (self::$articles as $element) {
+            if ($element['id'] == $request->id_product) {
+                $data = [
+                    'firstname' => $request->firstname,
+                    'lastname' => $request->lastname,
+                    'email' => $request->email,
+                    'message' => $request->message,
+                    'nome_articolo' => $element['title'],
+                    'descrizione' => $element['description'],
+                ];
+            }
+        }
 
         dd($data);
     }
