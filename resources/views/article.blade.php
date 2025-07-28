@@ -1,6 +1,6 @@
 <x-main>
     <x-slot name="title">{{ $article['category'] }}</x-slot>
-    <x-slot name='nav'><x-navbar :isDetail="true"></x-navbar></x-slot>
+    <x-slot name='nav'><x-navbar :isDetail="true" :isHidden="false"></x-navbar></x-slot>
     <article class="container.fluid">
         <img class="img-fluid w-100 h-100 object-fit-cover"src="{{ $article['img'] }}" alt="{{ $article['alt'] }}">
         <div class="m-5 d-flex flex-column">
