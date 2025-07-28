@@ -13,6 +13,7 @@
     <x-form>
         <h3 class="text-center title">Hai commenti su «{{ $article['title'] }}»?</h3>
         <p class="text-center">Scrivici utilizzando il form sottostante.</p>
+        <x-slot name='idArticle'><input type="hidden" name="id_product" value="{{ $article['id'] }}"></x-slot>
         <x-slot name='textarea'>Scrivi qui:</x-slot>
     </x-form>
 </x-main>

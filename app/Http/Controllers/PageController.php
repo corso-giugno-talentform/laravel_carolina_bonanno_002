@@ -61,4 +61,17 @@ class PageController extends Controller
         }
         abort(404);
     }
+
+    public function send(Request $request)
+    {
+        $data = [
+            'id_product' => $request->id_product,
+            'firstname' => $request->firstname,
+            'lastname' => $request->lastname,
+            'email' => $request->email,
+            'message' => $request->message,
+        ];
+
+        dd($data);
+    }
 }
