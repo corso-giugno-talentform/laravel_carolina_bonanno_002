@@ -47,6 +47,11 @@ class PageController extends Controller
         return view('welcome', ['articles' => self::$articles]);
     }
 
+    public function contacts()
+    {
+        return view('contacts');
+    }
+
     public function article($article)
     {
         foreach (self::$articles as $element) {
