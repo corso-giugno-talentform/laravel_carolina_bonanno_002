@@ -1,4 +1,3 @@
-@if (!$isHidden)
     <nav class="navbar navbar-expand-lg navbar-bg-color">
         <div class="container">
             <a class="navbar-brand" href="{{ route('homepage') }}">Velvet Frame</a>
@@ -18,4 +17,3 @@
             </div>
         </div>
     </nav>
-@endif

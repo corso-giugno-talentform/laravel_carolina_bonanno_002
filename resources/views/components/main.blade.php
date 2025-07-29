@@ -16,7 +16,7 @@
 
 <body class="light-bg">
     <header class="sticky-top">
-        {{ $nav }}
+        {{ $nav ?? null }}
     </header>
     <main>
         {{ $slot }}
