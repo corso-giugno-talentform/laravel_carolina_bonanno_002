@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\SendAdminMail;
+use App\Mail\SendMail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class PageController extends Controller
 {
@@ -64,6 +67,7 @@ class PageController extends Controller
 
     public function send(Request $request)
     {
+        // 1) Valido i dati del form:
         // questo é un middleware
         $request->validate([
             'firstname' => ['required', 'max:20'], //max 20
@@ -72,6 +76,7 @@ class PageController extends Controller
             'message' => ['required', 'min:10'], //min 10
         ]);
 
+        // 2) Mapping dei dati
         $data = [
             'firstname' => $request->firstname,
             'lastname' => $request->lastname,
@@ -87,7 +92,16 @@ class PageController extends Controller
                 }
             }
         }
-        dd($data);
+        // 3) Faccio qualcosa con i dati
+
+        // dd($data);
         //dd($request->all());
+
+        // 3) Invio mail
+        Mail::to($request->email)->send(new SendMail($data));
+        Mail::to('admin@miosito.it')->send(new SendAdminMail($data));
+
+
+        dd('Email inviate');
     }
 }
