@@ -64,19 +64,30 @@ class PageController extends Controller
 
     public function send(Request $request)
     {
-        foreach (self::$articles as $element) {
-            if ($element['id'] == $request->id_product) {
-                $data = [
-                    'firstname' => $request->firstname,
-                    'lastname' => $request->lastname,
-                    'email' => $request->email,
-                    'message' => $request->message,
-                    'nome_articolo' => $element['title'],
-                    'descrizione' => $element['description'],
-                ];
+        // questo é un middleware
+        $request->validate([
+            'firstname' => ['required', 'max:20'], //max 20
+            'lastname' => ['required', 'max:20'], //max 20
+            'email' => ['required', 'email'],
+            'message' => ['required', 'min:10'], //min 10
+        ]);
+
+        $data = [
+            'firstname' => $request->firstname,
+            'lastname' => $request->lastname,
+            'email' => $request->email,
+            'message' => $request->message,
+        ];
+
+        if ($request->id_product) {
+            foreach (self::$articles as $element) {
+                if ($element['id'] == $request->id_product) {
+                    $data['nome_articolo'] = $element['title'];
+                    $data['descrizione'] = $element['description'];
+                }
             }
         }
-
         dd($data);
+        //dd($request->all());
     }
 }

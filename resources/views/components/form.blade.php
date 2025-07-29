@@ -7,23 +7,44 @@
         <div class="row mb-3">
             <div class="col">
                 {{ $idArticle ?? null }}
-                <label for="name"class="form-label">Nome</label>
+                <label for="name" class="form-label">Nome</label>
                 <input type="text" id="name" class="form-control" placeholder="Nome" aria-label="First name"
-                    name="firstname">
+                    name="firstname" value={{ old('firstname') }}>
+                @error('firstname')
+                    <x-errorInput>
+                        {{ $message }}
+                    </x-errorInput>
+                @enderror
             </div>
             <div class="col">
                 <label for="lastname" class="form-label">Cognome</label>
                 <input type="text" id="lastname" class="form-control" placeholder="Cognome" aria-label="Last name"
-                    name="lastname">
+                    name="lastname" value={{ old('lastname') }}>
+                @error('lastname')
+                    <x-errorInput>
+                        {{ $message }}
+                    </x-errorInput>
+                @enderror
             </div>
         </div>
         <div class="mb-3">
             <label for="email" class="form-label">La tua email</label>
-            <input type="email" class="form-control" id="email" placeholder="name@example.com" name="email">
+            <input type="email" class="form-control" id="email" placeholder="name@example.com" name="email"
+                value={{ old('email') }}>
+            @error('email')
+                <x-errorInput>
+                    {{ $message }}
+                </x-errorInput>
+            @enderror
         </div>
         <div class="mb-3">
             <label for="text-area" class="form-label">{{ $textarea ?? 'La tua richiesta:' }}</label>
-            <textarea class="form-control" id="text-area" rows="3" name="message"></textarea>
+            <textarea class="form-control" id="text-area" rows="3" name="message">{{ old('message') }}</textarea>
+            @error('message')
+                <x-errorInput>
+                    {{ $message }}
+                </x-errorInput>
+            @enderror
         </div>
         <button type="submit" class="btn btn1">Invia</button>
     </form>
